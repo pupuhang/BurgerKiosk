@@ -8,17 +8,6 @@ namespace BurgerKiosk
             lblMessage.Visible = false; // 시작할 때 에러 메시지 라벨은 숨긴다
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            // 폼 시작 시 첫 포커스를 받으며 자동으로 라디오 버튼이 체크되는 현상을 방지하기 위해 
-            // 로딩 처리가 끝난 직후 비동기(BeginInvoke)로 체크를 해제합니다.
-            this.BeginInvoke(new Action(() => 
-            {
-                rdoHamBurger.Checked = false; // 햄버거 선택을 해제한다 (이때 TabStop도 false로 변경됨)
-                rdoHamBurger.TabStop = true; // 다시 TabStop을 true로 설정하여 탭 키로 포커스 가능하게 만듦
-            }));
-        }
-
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
@@ -32,7 +21,7 @@ namespace BurgerKiosk
             {
                 lblMessage.Text = "메뉴를 선택하세요."; // 라벨에 에러 메시지를 표시한다
                 lblMessage.Visible = true; // 에러 메시지 라벨을 보이게 한다
-                lblTotalCost.Text = "총 금액: 0원";
+                lblTotalCost.Text = "총 금액: 0원"; 
                 return; //주문 계산은 하지 않고 종료한다
             }
 
@@ -84,19 +73,15 @@ namespace BurgerKiosk
             rdoHamBurger.Checked = false; // 햄버거 선택을 해제한다
             rdoBulgogiBurger.Checked = false; // 불고기버거 선택을 해제한다
             rdoChickenBurger.Checked = false; // 치킨버거 선택을 해제한다
-
-            rdoHamBurger.TabStop = true; // 선택 해제 시 TabStop이 false가 되므로 탭 진입이 가능하게 다시 true로 설정
-
             chkPotato.Checked = false; // 감자튀김 선택을 해제한다
             chkCola.Checked = false; // 콜라 선택을 해제한다
             chkCheese.Checked = false; // 치즈 추가 선택을 해제한다
             chkSauce.Checked = false; // 소스 추가 선택을 해제한다
             lstOrder.Items.Clear(); // 주문 내역 리스트를 비운다
             lblTotalCost.Text = "총 금액: 0원"; // 총 금액 라벨을 초기값으로 되돌린다
-
+            
             lblMessage.Visible = false; // 에러 메시지 라벨을 다시 숨긴다
         }
-
 
     }
 }
