@@ -105,6 +105,7 @@
             rdoChickenBurger.TabStop = true;
             rdoChickenBurger.Text = "치킨버거";
             rdoChickenBurger.UseVisualStyleBackColor = true;
+            rdoChickenBurger.CheckedChanged += MenuOption_CheckedChanged;
             // 
             // pictureBox2
             // 
@@ -127,6 +128,7 @@
             rdoBulgogiBurger.TabStop = true;
             rdoBulgogiBurger.Text = "불고기버거";
             rdoBulgogiBurger.UseVisualStyleBackColor = true;
+            rdoBulgogiBurger.CheckedChanged += MenuOption_CheckedChanged;
             // 
             // pictureBox1
             // 
@@ -149,6 +151,7 @@
             rdoHamBurger.TabStop = true;
             rdoHamBurger.Text = "햄버거";
             rdoHamBurger.UseVisualStyleBackColor = true;
+            rdoHamBurger.CheckedChanged += MenuOption_CheckedChanged;
             // 
             // grpOption
             // 
@@ -173,8 +176,10 @@
             chkSauce.Name = "chkSauce";
             chkSauce.Size = new Size(96, 24);
             chkSauce.TabIndex = 3;
+            chkSauce.TabStop = false;
             chkSauce.Text = "소스 추가";
             chkSauce.UseVisualStyleBackColor = true;
+            chkSauce.CheckedChanged += MenuOption_CheckedChanged;
             // 
             // chkCheese
             // 
@@ -184,8 +189,10 @@
             chkCheese.Name = "chkCheese";
             chkCheese.Size = new Size(96, 24);
             chkCheese.TabIndex = 2;
+            chkCheese.TabStop = false;
             chkCheese.Text = "치즈 추가";
             chkCheese.UseVisualStyleBackColor = true;
+            chkCheese.CheckedChanged += MenuOption_CheckedChanged;
             // 
             // chkCola
             // 
@@ -195,8 +202,10 @@
             chkCola.Name = "chkCola";
             chkCola.Size = new Size(61, 24);
             chkCola.TabIndex = 1;
+            chkCola.TabStop = false;
             chkCola.Text = "콜라";
             chkCola.UseVisualStyleBackColor = true;
+            chkCola.CheckedChanged += MenuOption_CheckedChanged;
             // 
             // chkPotato
             // 
@@ -208,6 +217,7 @@
             chkPotato.TabIndex = 0;
             chkPotato.Text = "감자튀김";
             chkPotato.UseVisualStyleBackColor = true;
+            chkPotato.CheckedChanged += MenuOption_CheckedChanged;
             // 
             // grpOrder
             // 
@@ -230,6 +240,7 @@
             lstOrder.Name = "lstOrder";
             lstOrder.Size = new Size(277, 184);
             lstOrder.TabIndex = 0;
+            lstOrder.TabStop = false;
             // 
             // lblTotalCost
             // 
@@ -293,6 +304,7 @@
             Controls.Add(lblTitle);
             Name = "Form1";
             Text = "BurgerKiosk";
+            Load += Form1_Load;
             grpMenu.ResumeLayout(false);
             grpMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
