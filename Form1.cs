@@ -65,7 +65,7 @@ namespace BurgerKiosk
                 lstOrder.Items.Add("소스 추가 500원"); // 주문 내역 리스트에 소스 추가를 추가한다
             }
 
-            lblTotalCost.Text = "총 금액: " + totalCost + "원"; // 계산된 총 금액을 라벨에 표시한다
+            lblTotalCost.Text = "총 금액: " + totalCost.ToString("N0") + "원"; // 계산된 총 금액을 라벨에 표시한다
         }
 
         private void btnReset_Click(object sender, EventArgs e)
