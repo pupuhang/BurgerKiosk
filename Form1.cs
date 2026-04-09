@@ -5,6 +5,7 @@ namespace BurgerKiosk
         public Form1()
         {
             InitializeComponent();
+            lblMessage.Visible = false; // 시작할 때 에러 메시지 라벨은 숨긴다
         }
 
 
@@ -12,7 +13,17 @@ namespace BurgerKiosk
         {
             int totalCost = 0; // 총 금액을 저장할 변수를 0으로 시작한다
 
+            lblMessage.Visible = false; // 이전 에러 메시지를 숨긴다
+            lblMessage.Text = ""; // 이전 에러 문구를 지운다
             lstOrder.Items.Clear(); // 이전 주문 내역이 남아있지 않도록 리스트를 비운다
+
+            if (!rdoHamBurger.Checked && !rdoBulgogiBurger.Checked && !rdoChickenBurger.Checked) // 아무 메뉴도 선택하지 않았는지 확인한다
+            {
+                lblMessage.Text = "메뉴를 선택하세요."; // 라벨에 에러 메시지를 표시한다
+                lblMessage.Visible = true; // 에러 메시지 라벨을 보이게 한다
+                lblTotalCost.Text = "총 금액: 0원"; 
+                return; //주문 계산은 하지 않고 종료한다
+            }
 
             if (rdoHamBurger.Checked) // 햄버거가 선택되었는지 확인한다
             {
@@ -68,6 +79,8 @@ namespace BurgerKiosk
             chkSauce.Checked = false; // 소스 추가 선택을 해제한다
             lstOrder.Items.Clear(); // 주문 내역 리스트를 비운다
             lblTotalCost.Text = "총 금액: 0원"; // 총 금액 라벨을 초기값으로 되돌린다
+            
+            lblMessage.Visible = false; // 에러 메시지 라벨을 다시 숨긴다
         }
 
     }

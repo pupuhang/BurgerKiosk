@@ -47,6 +47,7 @@
             lblTotalCost = new Label();
             btnOrder = new Button();
             btnReset = new Button();
+            lblMessage = new Label();
             grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -211,11 +212,12 @@
             // grpOrder
             // 
             grpOrder.Controls.Add(lstOrder);
+            grpOrder.Controls.Add(lblTotalCost);
             grpOrder.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point, 129);
             grpOrder.ForeColor = Color.Red;
             grpOrder.Location = new Point(467, 76);
             grpOrder.Name = "grpOrder";
-            grpOrder.Size = new Size(304, 242);
+            grpOrder.Size = new Size(304, 257);
             grpOrder.TabIndex = 3;
             grpOrder.TabStop = false;
             grpOrder.Text = "주문 내역";
@@ -233,7 +235,8 @@
             // 
             lblTotalCost.AutoSize = true;
             lblTotalCost.Font = new Font("맑은 고딕", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            lblTotalCost.Location = new Point(467, 321);
+            lblTotalCost.ForeColor = Color.Blue;
+            lblTotalCost.Location = new Point(0, 219);
             lblTotalCost.Name = "lblTotalCost";
             lblTotalCost.Size = new Size(140, 31);
             lblTotalCost.TabIndex = 4;
@@ -263,15 +266,27 @@
             btnReset.UseVisualStyleBackColor = false;
             btnReset.Click += btnReset_Click;
             // 
+            // lblMessage
+            // 
+            lblMessage.AutoSize = true;
+            lblMessage.Font = new Font("맑은 고딕", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            lblMessage.ForeColor = Color.Red;
+            lblMessage.Location = new Point(467, 362);
+            lblMessage.Name = "lblMessage";
+            lblMessage.Size = new Size(152, 23);
+            lblMessage.TabIndex = 7;
+            lblMessage.Text = "메뉴를 선택하세요";
+            lblMessage.Visible = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblMessage);
             Controls.Add(btnReset);
             Controls.Add(btnOrder);
-            Controls.Add(lblTotalCost);
             Controls.Add(grpOrder);
             Controls.Add(grpOption);
             Controls.Add(grpMenu);
@@ -286,6 +301,7 @@
             grpOption.ResumeLayout(false);
             grpOption.PerformLayout();
             grpOrder.ResumeLayout(false);
+            grpOrder.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -310,5 +326,6 @@
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
+        private Label lblMessage;
     }
 }
