@@ -69,5 +69,6 @@ namespace BurgerKiosk
             lstOrder.Items.Clear(); // 주문 내역 리스트를 비운다
             lblTotalCost.Text = "총 금액: 0원"; // 총 금액 라벨을 초기값으로 되돌린다
         }
+
     }
 }
